@@ -8,18 +8,16 @@
 <title>/member/updateform.do</title>
 </head>
 <body>
-<div class="container">
-<form action="update.do" method="post">
-	<h1>수정 폼 입니다.</h1>
-	<input type="hidden" name="num" value="${requestScope.num}"/>
-	<label>
-		이름 <input type="text" id="name" name="name" placeholder="이름 입력"/>
-	</label>
-	<label>
-		주소 <input type="text" id="addr" name="addr" placeholder="주소 입력"/>	
-	</label>
-	<button type="submit">수정</button>
-</form>
-</div>
+<h1>회원 정보 수정 폼 입니다.</h1>
+	<form action="update.do" method="post">
+		<!-- 회원정보를 수정 반영할때 번호도 필요하기 때문에 폼 제출될때 같이 제출되도록 한다. -->
+		<input type="hidden" name="num" value="${dto.num }"/>
+		<!--  아래 번호는 단순 display 용도이다.  -->
+		번호 <input type="text" value="${dto.num }" disabled/> <br/>
+		이름 <input type="text" name="name" value="${dto.name }"/><br/>
+		주소 <input type="text" name="addr" value="${dto.addr }"/><br/>
+		<button type="submit">수정확인</button>
+		<button type="reset">취소</button>
+	</form>
 </body>
 </html>
