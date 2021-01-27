@@ -27,7 +27,7 @@
 		WHERE id=#{id}
 	</select>
 	<insert id="insert" parameterType="usersDto">
-		ISNERT INTO users
+		INSERT INTO users
 		(id, pwd, email, regdate)
 		VALUES(#{id}, #{pwd}, #{email}, SYSDATE)
 	</insert>
