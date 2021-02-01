@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.servlet.ModelAndView;
 
+import com.gura.spring05.cafe.dto.CafeCommentDto;
 import com.gura.spring05.cafe.dto.CafeDto;
 
 public interface CafeService {
@@ -19,4 +20,8 @@ public interface CafeService {
 	public void deletelogic(int num);
 	//수정 폼 로직
 	public void updateformlogic(HttpServletRequest request, ModelAndView mView);
+	//댓글을 저장하는 메소드
+	public void saveComment(HttpServletRequest request);
+	public void deleteComment(HttpServletRequest request);//댓글 삭제
+	public void updateComment(CafeCommentDto dto);//댓글 수정
 }
